@@ -568,14 +568,16 @@
             window.open('https://whatsapp.com/channel/0029Vb6rVoD0bIdsKjqlNM2c');
         }
         
-        // Fungsi untuk pembelian produk
-        function buyProduct(productName, price) {
-            const phoneNumber = '6283857160069';
-            const message = `Halo, saya ingin membeli produk:\n\nNama Produk: ${productName}\nHarga: Rp ${price.toLocaleString('id-ID')}\n\nBagaimana cara pemesanannya?`;
-            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        /// Fungsi untuk pembelian produk - redirect ke halaman pembayaran
+function buyProduct(productName, price) {
+    // Encode parameter untuk URL agar aman (menghindari karakter khusus)
+    const encodedProduct = encodeURIComponent(productName);
+    const encodedPrice = encodeURIComponent(price);
+    // Redirect ke halaman pembayaran dengan parameter
+    window.location.href = `bayaran.html?product=${encodedProduct}&price=${encodedPrice}`;
+}
             
-            window.open(whatsappUrl, '_blank');
-        }
+            
     </script>
 </body>
 </html>
