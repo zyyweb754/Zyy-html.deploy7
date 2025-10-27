@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "bayar.js": {
+      "runtime": "nodejs20.1"
+    }
+  }
+}
