@@ -17,8 +17,8 @@ if (!$amount || !$qris_statis) {
 // Panggil API QRIS Dinamis
 $url = "https://qrisku.my.id/api";
 $data = [
-    "amount" => $amount,
-    "qris_statis" => $qris_statis
+    "amount" => "5000",
+    "qris_statis" => "00020101021126670016COM.NOBUBANK.WWW01189360050300000879140214758392711572990303UMI51440014ID.CO.QRIS.WWW0215ID20243553748910303UMI5204541153033605802ID5929TOKO AFIQ STOREZ 01 OK21063336006JEPARA61055946362070703A016304C1A7"
 ];
 
 $ch = curl_init();
