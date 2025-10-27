@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAZYY OFFICIAL - Produk Digital</title>
+    <style>
+        /* Reset dan Styling Dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #fff;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .logo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(90deg, #ff8a00, #e52e71);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        /* Menu Navigasi */
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .nav-btn {
+            background: linear-gradient(45deg, #ff8a00, #e52e71);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .nav-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Produk Section */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .product-category {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .product-category:hover {
+            transform: translateY(-5px);
+        }
+        
+        .category-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            color: #ffcc00;
+        }
+        
+        .product-item {
+            margin-bottom: 15px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .product-name {
+            flex: 1;
+        }
+        
+        .product-price {
+            font-weight: bold;
+            color: #ffcc00;
+        }
+        
+        .buy-btn {
+            background: linear-gradient(45deg, #00c853, #64dd17);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-left: 10px;
+        }
+        
+        .buy-btn:hover {
+            background: linear-gradient(45deg, #00e676, #76ff03);
+            transform: scale(1.05);
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 40px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .contact h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #ffcc00;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .contact-link {
+            display: inline-block;
+            background: linear-gradient(45deg, #2196f3, #21cbf3);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .contact-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .whatsapp-link {
+            background: linear-gradient(45deg, #25d366, #128c7e);
+        }
+        
+        .telegram-link {
+            background: linear-gradient(45deg, #0088cc, #00aced);
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .testimonial-link {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff4081, #f50057);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Responsif */
+        @media (max-width: 768px) {
+            .products {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-btn {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="https://files.catbox.moe/4kmkqt.jpg" alt="SAZYY OFFICIAL Logo" class="logo">
+            <h1>SAZYY OFFICIAL</h1>
+            <p class="tagline">Solusi Terbaik untuk Kebutuhan Digital Anda</p>
+            
+            <div class="nav-menu">
+                <button class="nav-btn" onclick="scrollToSection('products')">Produk</button>
+                <button class="nav-btn" onclick="scrollToSection('contact')">Kontak</button>
+                <button class="nav-btn" onclick="openTestimonial()">Testimoni</button>
+            </div>
+        </header>
+        
+        <section id="products" class="products">
+            <!-- SEWA BOTZ PUSHKONTAK -->
+            <div class="product-category">
+                <h2 class="category-title">SEWA BOTZ PUSHKONTAK</h2>
+                <div class="product-item">
+                    <span class="product-name">1 Jam</span>
+                    <span class="product-price">Rp 2.000</span>
+                    <button class="buy-btn" onclick="buyProduct('SEWA BOTZ PUSHKONTAK - 1 Jam', 2000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">2 Jam</span>
+                    <span class="product-price">Rp 3.000</span>
+                    <button class="buy-btn" onclick="buyProduct('SEWA BOTZ PUSHKONTAK - 2 Jam', 3000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">3 Jam</span>
+                    <span class="product-price">Rp 4.000</span>
+                    <button class="buy-btn" onclick="buyProduct('SEWA BOTZ PUSHKONTAK - 3 Jam', 4000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">1 Hari</span>
+                    <span class="product-price">Rp 5.000</span>
+                    <button class="buy-btn" onclick="buyProduct('SEWA BOTZ PUSHKONTAK - 1 Hari', 5000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">2 Hari</span>
+                    <span class="product-price">Rp 7.000</span>
+                    <button class="buy-btn" onclick="buyProduct('SEWA BOTZ PUSHKONTAK - 2 Hari', 7000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">5 Hari</span>
+                    <span class="product-price">Rp 10.000</span>
+                    <button class="buy-btn" onclick="buyProduct('SEWA BOTZ PUSHKONTAK - 5 Hari', 10000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">1 Minggu + 3 Hari</span>
+                    <span class="product-price">Rp 15.000</span>
+                    <button class="buy-btn" onclick="buyProduct('SEWA BOTZ PUSHKONTAK - 1 Minggu + 3 Hari', 15000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">2 Minggu + 3 Hari</span>
+                    <span class="product-price">Rp 20.000</span>
+                    <button class="buy-btn" onclick="buyProduct('SEWA BOTZ PUSHKONTAK - 2 Minggu + 3 Hari', 20000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">3 Minggu</span>
+                    <span class="product-price">Rp 25.000</span>
+                    <button class="buy-btn" onclick="buyProduct('SEWA BOTZ PUSHKONTAK - 3 Minggu', 25000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">1 Bulan Full</span>
+                    <span class="product-price">Rp 30.000</span>
+                    <button class="buy-btn" onclick="buyProduct('SEWA BOTZ PUSHKONTAK - 1 Bulan Full', 30000)">Beli</button>
+                </div>
+            </div>
+            
+            <!-- BOTZ BUG -->
+            <div class="product-category">
+                <h2 class="category-title">BOTZ BUG</h2>
+                <div class="product-item">
+                    <span class="product-name">1 Minggu</span>
+                    <span class="product-price">Rp 10.000</span>
+                    <button class="buy-btn" onclick="buyProduct('BOTZ BUG - 1 Minggu', 10000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">1 Bulan</span>
+                    <span class="product-price">Rp 20.000</span>
+                    <button class="buy-btn" onclick="buyProduct('BOTZ BUG - 1 Bulan', 20000)">Beli</button>
+                </div>
+            </div>
+            
+            <!-- MURBUG BY SAZYY -->
+            <div class="product-category">
+                <h2 class="category-title">MURBUG BY SAZYY</h2>
+                <div class="product-item">
+                    <span class="product-name">1 Minggu</span>
+                    <span class="product-price">Rp 10.000</span>
+                    <button class="buy-btn" onclick="buyProduct('MURBUG BY SAZYY - 1 Minggu', 10000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">3 Minggu</span>
+                    <span class="product-price">Rp 15.000</span>
+                    <button class="buy-btn" onclick="buyProduct('MURBUG BY SAZYY - 3 Minggu', 15000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">1 Bulan</span>
+                    <span class="product-price">Rp 20.000</span>
+                    <button class="buy-btn" onclick="buyProduct('MURBUG BY SAZYY - 1 Bulan', 20000)">Beli</button>
+                </div>
+            </div>
+            
+            <!-- JASA BUG -->
+            <div class="product-category">
+                <h2 class="category-title">JASA BUG</h2>
+                <div class="product-item">
+                    <span class="product-name">LOW (Per Nomor)</span>
+                    <span class="product-price">Rp 3.000</span>
+                    <button class="buy-btn" onclick="buyProduct('JASA BUG - LOW', 3000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">MEDIUM (Per Nomor)</span>
+                    <span class="product-price">Rp 5.000</span>
+                    <button class="buy-btn" onclick="buyProduct('JASA BUG - MEDIUM', 5000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">HIGH (Per Nomor)</span>
+                    <span class="product-price">Rp 7.000</span>
+                    <button class="buy-btn" onclick="buyProduct('JASA BUG - HIGH', 7000)">Beli</button>
+                </div>
+            </div>
+            
+            <!-- NOKOS -->
+            <div class="product-category">
+                <h2 class="category-title">NOKOS</h2>
+                <div class="product-item">
+                    <span class="product-name">NOKOS INDO (Per Nomor)</span>
+                    <span class="product-price">Rp 7.000</span>
+                    <button class="buy-btn" onclick="buyProduct('NOKOS INDO - Per Nomor', 7000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">MURID NOKOS</span>
+                    <span class="product-price">Rp 10.000</span>
+                    <button class="buy-btn" onclick="buyProduct('MURID NOKOS', 10000)">Beli</button>
+                </div>
+            </div>
+            
+            <!-- PANEL PTERODACTYL -->
+            <div class="product-category">
+                <h2 class="category-title">PANEL PTERODACTYL</h2>
+                <div class="product-item">
+                    <span class="product-name">1GB</span>
+                    <span class="product-price">Rp 1.000</span>
+                    <button class="buy-btn" onclick="buyProduct('PANEL PTERODACTYL - 1GB', 1000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">2GB</span>
+                    <span class="product-price">Rp 2.000</span>
+                    <button class="buy-btn" onclick="buyProduct('PANEL PTERODACTYL - 2GB', 2000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">3GB</span>
+                    <span class="product-price">Rp 3.000</span>
+                    <button class="buy-btn" onclick="buyProduct('PANEL PTERODACTYL - 3GB', 3000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">4GB</span>
+                    <span class="product-price">Rp 4.000</span>
+                    <button class="buy-btn" onclick="buyProduct('PANEL PTERODACTYL - 4GB', 4000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">5GB</span>
+                    <span class="product-price">Rp 5.000</span>
+                    <button class="buy-btn" onclick="buyProduct('PANEL PTERODACTYL - 5GB', 5000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">6GB</span>
+                    <span class="product-price">Rp 6.000</span>
+                    <button class="buy-btn" onclick="buyProduct('PANEL PTERODACTYL - 6GB', 6000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">7GB</span>
+                    <span class="product-price">Rp 7.000</span>
+                    <button class="buy-btn" onclick="buyProduct('PANEL PTERODACTYL - 7GB', 7000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">8GB</span>
+                    <span class="product-price">Rp 8.000</span>
+                    <button class="buy-btn" onclick="buyProduct('PANEL PTERODACTYL - 8GB', 8000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">9GB</span>
+                    <span class="product-price">Rp 9.000</span>
+                    <button class="buy-btn" onclick="buyProduct('PANEL PTERODACTYL - 9GB', 9000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">10GB</span>
+                    <span class="product-price">Rp 10.000</span>
+                    <button class="buy-btn" onclick="buyProduct('PANEL PTERODACTYL - 10GB', 10000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">Unlimited</span>
+                    <span class="product-price">Rp 12.000</span>
+                    <button class="buy-btn" onclick="buyProduct('PANEL PTERODACTYL - Unlimited', 12000)">Beli</button>
+                </div>
+            </div>
+            
+            <!-- PANEL LAINNYA -->
+            <div class="product-category">
+                <h2 class="category-title">PANEL LAINNYA</h2>
+                <div class="product-item">
+                    <span class="product-name">RESELLER PANEL</span>
+                    <span class="product-price">Rp 15.000</span>
+                    <button class="buy-btn" onclick="buyProduct('RESELLER PANEL', 15000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">ADMIN PANEL</span>
+                    <span class="product-price">Rp 20.000</span>
+                    <button class="buy-btn" onclick="buyProduct('ADMIN PANEL', 20000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">PT PANEL</span>
+                    <span class="product-price">Rp 30.000</span>
+                    <button class="buy-btn" onclick="buyProduct('PT PANEL', 30000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">OWN PANEL</span>
+                    <span class="product-price">Rp 40.000</span>
+                    <button class="buy-btn" onclick="buyProduct('OWN PANEL', 40000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">TK PANEL</span>
+                    <span class="product-price">Rp 60.000</span>
+                    <button class="buy-btn" onclick="buyProduct('TK PANEL', 60000)">Beli</button>
+                </div>
+            </div>
+            
+            <!-- JASA RENAME & SC -->
+            <div class="product-category">
+                <h2 class="category-title">JASA RENAME & SC</h2>
+                <div class="product-item">
+                    <span class="product-name">JASA RENAME SC (Separuh)</span>
+                    <span class="product-price">Rp 10.000</span>
+                    <button class="buy-btn" onclick="buyProduct('JASA RENAME SC (Separuh)', 10000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">FUL RENAME</span>
+                    <span class="product-price">Rp 15.000</span>
+                    <button class="buy-btn" onclick="buyProduct('FUL RENAME', 15000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">SC PUSH VIP</span>
+                    <span class="product-price">Rp 15.000</span>
+                    <button class="buy-btn" onclick="buyProduct('SC PUSH VIP', 15000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">SC PUSH VIP ANTIKENON 90%</span>
+                    <span class="product-price">Rp 35.000</span>
+                    <button class="buy-btn" onclick="buyProduct('SC PUSH VIP ANTIKENON 90%', 35000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">SC BUG VIP</span>
+                    <span class="product-price">Rp 15.000 - 60.000</span>
+                    <button class="buy-btn" onclick="buyProduct('SC BUG VIP', 15000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">SC MD FITUR 1000+++</span>
+                    <span class="product-price">Rp 10.000</span>
+                    <button class="buy-btn" onclick="buyProduct('SC MD FITUR 1000+++', 10000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">SC MD FITUR 2.000+++</span>
+                    <span class="product-price">Rp 20.000</span>
+                    <button class="buy-btn" onclick="buyProduct('SC MD FITUR 2.000+++', 20000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">SC MD FITUR 3.000+++</span>
+                    <span class="product-price">Rp 30.000</span>
+                    <button class="buy-btn" onclick="buyProduct('SC MD FITUR 3.000+++', 30000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">MURID SUNTIK SOSMED</span>
+                    <span class="product-price">Rp 15.000</span>
+                    <button class="buy-btn" onclick="buyProduct('MURID SUNTIK SOSMED', 15000)">Beli</button>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">MURID RENAME</span>
+                    <span class="product-price">Rp 20.000</span>
+                    <button class="buy-btn" onclick="buyProduct('MURID RENAME', 20000)">Beli</button>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="contact">
+            <h2>Hubungi Kami</h2>
+            <p>Untuk pertanyaan, bantuan, atau pemesanan produk, silakan hubungi kami melalui:</p>
+            
+            <div class="contact-links">
+                <a href="https://wa.me/6283857160069" class="contact-link whatsapp-link" target="_blank">
+                    WhatsApp: 6283857160069
+                </a>
+                <a href="https://t.me/sazyyofficialreal" class="contact-link telegram-link" target="_blank">
+                    Telegram: @sazyyofficialreal
+                </a>
+            </div>
+        </section>
+        
+        <footer>
+            <p>&copy; 2023 SAZYY  OFFICIAL. All rights reserved.</p>
+            <a href="https://whatsapp.com/channel/0029Vas8fgL9Gv7Q92AMB22a" class="testimonial-link" target="_blank">
+                Lihat Testimoni Pelanggan di WhatsApp Channel
+            </a>
+        </footer>
+    </div>
+
+    <script>
+        // Fungsi untuk scroll ke section tertentu
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        
+        // Fungsi untuk membuka testimonial
+        function openTestimonial() {
+            window.open('https://whatsapp.com/channel/0029Vas8fgL9Gv7Q92AMB22a', '_blank');
+        }
+        
+        // Fungsi untuk pembelian produk
+        function buyProduct(productName, price) {
+            const phoneNumber = '6283857160069';
+            const message = `Halo, saya ingin membeli produk:\n\nNama Produk: ${productName}\nHarga: Rp ${price.toLocaleString('id-ID')}\n\nBagaimana cara pemesanannya?`;
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
