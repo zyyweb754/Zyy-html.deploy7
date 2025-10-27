@@ -1,261 +1,68 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pembayaran - SAZYY OFFICIAL</title>
-    <style>
-        /* Reset dan Styling Dasar - Mirip dengan halaman utama */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            color: #fff;
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .container {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        /* Header */
-        header {
-            text-align: center;
-            padding: 20px 0;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .logo {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #fff;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-            margin-bottom: 15px;
-        }
-        
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            background: linear-gradient(90deg, #ff8a00, #e52e71);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        /* Detail Produk */
-        .product-details {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-        
-        .product-details h2 {
-            color: #ffcc00;
-            margin-bottom: 10px;
-        }
-        
-        .product-details p {
-            margin-bottom: 5px;
-        }
-        
-        /* QRIS Section */
-        .qris-section {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-        
-        .qris-section h2 {
-            color: #ffcc00;
-            margin-bottom: 15px;
-        }
-        
-        .qris-image {
-            max-width: 200px;
-            margin: 0 auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .loading {
-            color: #ffcc00;
-            font-size: 1.2rem;
-        }
-        
-        /* Instruksi */
-        .instructions {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-        
-        .instructions h2 {
-            color: #ffcc00;
-            margin-bottom: 10px;
-        }
-        
-        .instructions ul {
-            list-style: disc;
-            margin-left: 20px;
-        }
-        
-        /* Tombol */
-        .btn {
-            background: linear-gradient(45deg, #00c853, #64dd17);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 50px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin: 10px;
-        }
-        
-        .btn:hover {
-            background: linear-gradient(45deg, #00e676, #76ff03);
-            transform: scale(1.05);
-        }
-        
-        .back-btn {
-            background: linear-gradient(45deg, #ff8a00, #e52e71);
-        }
-        
-        /* Responsif */
-        @media (max-width: 768px) {
-            .container {
-                margin: 10px;
-                padding: 15px;
-            }
-            
-            h1 {
-                font-size: 1.8rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pembayaran QRIS Dinamis</title>
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    .container {
+      margin-top: 60px;
+    }
+    .qris-image {
+      margin-top: 20px;
+      width: 260px;
+      border: 3px solid #00ffcc;
+      border-radius: 10px;
+    }
+    .price {
+      font-size: 22px;
+      color: #00ffcc;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <img src="https://files.catbox.moe/4kmkqt.jpg" alt="SAZYY OFFICIAL Logo" class="logo">
-            <h1>SAZYY OFFICIAL</h1>
-            <p>Pembayaran Produk Digital</p>
-        </header>
-        
-        <div class="product-details">
-            <h2>Detail Produk</h2>
-            <p id="product-name">Memuat...</p>
-            <p id="product-price">Memuat...</p>
-        </div>
-        
-        <div class="qris-section">
-            <h2>QRIS Pembayaran</h2>
-            <div id="qris-container">
-                <p class="loading">Membuat QRIS...</p>
-            </div>
-        </div>
-        
-        <div class="instructions">
-            <h2>Instruksi Pembayaran</h2>
-            <ul>
-                <li>Buka aplikasi e-wallet (GoPay, OVO, Dana, dll.)</li>
-                <li>Scan QRIS di atas</li>
-                <li>Pastikan nominal sesuai dengan harga produk</li>
-                <li>Setelah bayar, kirim bukti ke WhatsApp kami: <a href="https://wa.me/6283857160069" style="color: #ffcc00;">6283857160069</a></li>
-            </ul>
-        </div>
-        
-        <div style="text-align: center;">
-            <button class="btn back-btn" onclick="goBack()">Kembali ke Produk</button>
-            <button class="btn" onclick="confirmPayment()">Konfirmasi Pembayaran</button>
-        </div>
-    </div>
+  <div class="container">
+    <h1>Pembayaran QRIS</h1>
+    <p id="product-name"></p>
+    <p id="product-price" class="price"></p>
+    <div id="qris-container">Memuat QRIS...</div>
+  </div>
 
-    <script>
-        // Ambil parameter dari URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const productName = urlParams.get('product');
-        const productPrice = parseInt(urlParams.get('price'));
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const productName = params.get("product");
+    const productPrice = parseInt(params.get("price"));
 
-        // Tampilkan detail produk
-        document.getElementById('product-name').textContent = `Nama Produk: ${productName}`;
-        document.getElementById('product-price').textContent = `Harga: Rp ${productPrice.toLocaleString('id-ID')}`;
+    document.getElementById("product-name").textContent = `Nama Produk: ${productName}`;
+    document.getElementById("product-price").textContent = `Harga: Rp ${productPrice.toLocaleString("id-ID")}`;
 
-        // Fungsi untuk generate QRIS
-        async function generateQRIS(amount) {
-            // PLACEHOLDER - GANTI DENGAN QRIS STATIS ANDA SENDIRI
-            const qrisStatis = "00020101021126670016COM.NOBUBANK.WWW01189360050300000879140214758392711572990303UMI51440014ID.CO.QRIS.WWW0215ID20243553748910303UMI5204541153033605802ID5929TOKO AFIQ STOREZ 01 OK21063336006JEPARA61055946362070703A016304C1A7";
+    async function generateQRIS(amount) {
+      try {
+        const response = await fetch("/api/qris", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ amount }),
+        });
+        const data = await response.json();
 
-            // PLACEHOLDER - GANTI DENGAN API ANDA SENDIRI JIKA BERBEDA
-            const apiUrl = "https://qrisku.my.id/api";
-            const data = {
-                amount: amount.toString(),
-                qris_statis: qrisStatis
-            };
-
-            try {
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                });
-
-                const result = await response.json();
-                if (result.status === 'success') {
-                    // Tampilkan QRIS
-                    document.getElementById('qris-container').innerHTML = `<img src="data:image/png;base64,${result.qris_base64}" alt="QRIS" class="qris-image">`;
-                } else {
-                    document.getElementById('qris-container').innerHTML = `<p style="color: red;">Error: ${result.message}</p>`;
-                }
-            } catch (error) {
-                document.getElementById('qris-container').innerHTML = `<p style="color: red;">Gagal memuat QRIS. Coba lagi.</p>`;
-                console.error('Error:', error);
-            }
+        if (data.status === "success") {
+          document.getElementById("qris-container").innerHTML =
+            `<img src="data:image/png;base64,${data.qris_base64}" class="qris-image" alt="QRIS">`;
+        } else {
+          document.getElementById("qris-container").innerHTML = `<p style="color:red;">${data.message}</p>`;
         }
+      } catch (err) {
+        document.getElementById("qris-container").innerHTML = `<p style="color:red;">Gagal memuat QRIS: ${err.message}</p>`;
+      }
+    }
 
-        // Panggil generate QRIS saat halaman load
-        if (productPrice) {
-            generateQRIS(productPrice);
-        }
-
-        // Fungsi kembali
-        function goBack() {
-            window.history.back();
-        }
-
-        // Fungsi konfirmasi (redirect ke WhatsApp)
-        function confirmPayment() {
-            const phoneNumber = '6283857160069';
-            const message = `Halo, saya sudah bayar untuk produk:\n\nNama Produk: ${productName}\nHarga: Rp ${productPrice.toLocaleString('id-ID')}\n\nBerikut bukti pembayaran: [Sertakan screenshot]`;
-            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank');
-        }
-    </script>
+    generateQRIS(productPrice);
+  </script>
 </body>
 </html>
